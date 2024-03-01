@@ -1,0 +1,7 @@
+Expliqeu las diferencias entre las setencias de la columna de la izquierda y de la columna de la derecha. Para cada una de ellas deducir el valor final de x si el valor inicial de x es 0
+if(x>=0)                if(x>=0)
+    x = x+1;                x = x+1;
+else if(x>=1)           if(x>=1)
+    x=x+2;                  x = x+2;
+x=1                     x=3
+La diferencia entre las sentencias se basa en el else de la columna de la izquierda por que sino se cumple lo del if hara lo que esta el else, en cambio la segunda columna solo hay if y tras pasar por el primer if x ya cambio y puede entrar en el segundo if

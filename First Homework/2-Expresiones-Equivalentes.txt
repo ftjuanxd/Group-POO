@@ -1,0 +1,18 @@
+2. Usar expresiones equivalentes para las siguientes, usando operadores mixtos.
+
+    a) x = 10 + x - y;
+
+    R/: x +=10-y;
+
+    b)r =100 * r;
+
+    R/:r*=100;
+
+    c)y = y/(10+x);
+
+    R/: y /= 10+x;
+
+    d) z = 3 * x * 6;
+
+    no es posible 
+
