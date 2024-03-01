@@ -1,0 +1,10 @@
+Para crear un litro del compuesto D, se requiere que su composición por partes esté conformada de la siguiente manera: 5 partes deben ser del producto A, 8 partes deben ser del producto B y 7 partes deben ser del producto C. Si se requiere crear 10 litros del compuesto D. ¿Cuántos litros del producto A se requieren?, ¿Cuántos litros del producto B se requieren?, ¿Cuántos litros del producto C se requieren?
+
+5 partes deben ser del producto A, lo que equivale a 50 partes o litros de producto A.
+8 partes deben ser del producto B, lo que equivale a 80 partes o litros de producto B.
+7 partes deben ser del producto C, lo que equivale a 70 partes o litros de producto C.
+Por lo tanto, para crear 10 litros del compuesto D, necesitas:
+
+50 litros del producto A.
+80 litros del producto B.
+70 litros del producto C.

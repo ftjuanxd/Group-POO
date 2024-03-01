@@ -1,0 +1,10 @@
+Indica cual de las siguientes expresiones es false si y solo si un valor real x esta en el intervalo abierto (3.0,5.0):
+
+a)(x<=3.0)||(x>=5.0)
+R/:false
+b)(x<3.0)&&(x<5.0)
+R/:false
+c)(x>=3.0)||(x<=5.0)
+R/:True
+d)(x<=3.0)&&(x>=5.0)
+R/:false
