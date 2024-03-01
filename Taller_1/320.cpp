@@ -27,9 +27,8 @@ int main() {
     else if (mes == "Octubre") mesNumero = "10";
     else if (mes == "Noviembre") mesNumero = "11";
     else if (mes == "Diciembre") mesNumero = "12";
-    else mesNumero = -1; // Mes no válido
+    else mesNumero = -1; 
 
-    // Imprime la fecha en formato numérico
     cout << dia << " " << mesNumero << " " << ano << endl;
 
     return 0;
