@@ -1,0 +1,22 @@
+En la convención republicana, se reúnen 100 personas de las cuales z son mujeres y e son hombres. Si en la convención se dispone de x mesas y se dispone que la diferencia entre el número de hombres y mujeres en cada mesa no debe superar 2. ¿Cuántas sillas para mujeres se deben poner por mesa?, ¿Cuántas sillas por hombre se deben poner?. Si los votos de las mujeres valen 1.5 veces los votos de los hombres. ¿Cuántas mujeres deberían estar en la convención para que el candidato sea elegido por votos de solo mujeres? Si los votos de los hombres valen 1.5 veces los votos de las mujeres. ¿Cuántas mujeres deberían estar en la convención para que el candidato sea elegido por votos de solo mujeres?
+
+Primero sabemos que hay 100 personas en la convencion y que estas son hombres y mujeres
+(100=z+e)
+x=z/2+e/2
+
+numero de sillas para hombres
+e/2
+numero de sillas para mujeres
+z/2
+votos de las mujeresen relacion con los votos de los hombres
+1.5
+numero total de votos en la convencion
+100*1.5=150
+Número de mujeres necesarias para que el candidato sea elegido por votos de solo mujeres:
+z/2=150
+z=150*2
+z=300
+Número de mujeres necesarias para que el candidato sea elegido por votos de solo hombres:
+e/2=150
+e=150*2
+e=300
