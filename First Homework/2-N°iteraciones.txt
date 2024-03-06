@@ -1,7 +1,0 @@
-Indica cuantas iteraciones del bloque se realizan al ejecutar el siguiente bucle:
-for(i-=0;i<6;i=i+2){
-    for(j=0;j<6;j=j+2){
-        /*bloque*/
-    }
-}
-R/:9
