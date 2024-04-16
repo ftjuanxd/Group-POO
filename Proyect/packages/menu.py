@@ -1,7 +1,7 @@
 import datetime
-from packages import Proyecto as Parqueadero
+import Proyecto as Ps
 def menu():
-    parqueadero = Parqueadero(5000)  # Tarifa ejemplo de $5000 por hora
+    parqueadero = Ps.Parqueadero(40,5000)  # Tarifa ejemplo de $5000 por hora
     while True:
         print("\n1. Ingresar carro")
         print("2. Dar salida a un carro")
