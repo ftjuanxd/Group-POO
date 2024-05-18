@@ -21,7 +21,7 @@ class Parqueadero:
         self.placas_ingresadas = set()  # Conjunto para placas únicas
 
     def ingresar_vehiculo(self, carro, hora_entrada):
-        # Validar que la placa tenga exactamente 6 caracteres
+        # Validar que la placa tenga exactamente 7 caracteres
         if len(carro.placa) != 7:
             return "Error: La placa debe tener exactamente 7 caracteres."
 
@@ -44,35 +44,20 @@ class Parqueadero:
     def dar_salida_vehiculo(self, placa):
         for puesto in self.puestos:
             if puesto.carro and puesto.carro.placa == placa:
+                tiempo_estacionado = datetime.now() - puesto.carro.hora_entrada
+                horas_estacionadas = tiempo_estacionado.total_seconds() // 3600 + 1  # Redondear al alza
+                costo = self.tarifa * horas_estacionadas
+                self.ingresos_totales += costo
                 self.placas_ingresadas.remove(placa)
                 puesto.carro = None
-                return "Carro retirado correctamente."
+                return f"Carro retirado correctamente. Costo: {costo:.2f}"
         return "Error: Carro no encontrado."
     
-    def imprimir_estado_parqueadero(self):
-        print("Estado del parqueadero:")
-        for puesto in self.puestos:
-            estado = "Disponible" if puesto.carro is None else f"Ocupado: {puesto.carro.placa}"
-            print(f"Puesto {puesto.numero}: {estado}")
-
-    def calcular_ingresos(self, horas):
-        return self.tarifa * horas
-
     def calcular_ingresos_totales(self):
-        ingresos = 0
-        for puesto in self.puestos:
-            if puesto.carro:
-                tiempo_estacionado = datetime.now() - puesto.carro.hora_entrada
-                horas_estacionadas = tiempo_estacionado.total_seconds() // 3600
-                ingresos += self.calcular_ingresos(horas_estacionadas)
-        self.ingresos_totales = ingresos
-        return ingresos
+        return self.ingresos_totales
     
     def consultar_puestos_disponibles(self):
-        disponibles = 0
-        for puesto in self.puestos:
-            if puesto.carro is None:
-                disponibles += 1
+        disponibles = sum(1 for puesto in self.puestos if puesto.carro is None)
         return disponibles
     
     def consultar_porcentaje_disponibilidad(self):
@@ -86,6 +71,12 @@ class Parqueadero:
 
     def cambiar_tarifa(self, nueva_tarifa):
         self.tarifa = nueva_tarifa
+
+    def imprimir_estado_parqueadero(self):
+        print("Estado del parqueadero:")
+        for puesto in self.puestos:
+            estado = "Disponible" if puesto.carro is None else f"Ocupado: {puesto.carro.placa}"
+            print(f"Puesto {puesto.numero}: {estado}")
 
 # Función para guardar los datos en un archivo CSV
 def guardar_datos_en_csv(parqueadero, nombre_archivo):
@@ -119,3 +110,17 @@ def limpiar_pantalla():
         os.system('cls')
     else:
         os.system('clear')
+
+# Función para mostrar el menú y manejar la interacción del usuario
+def mostrar_menu():
+    print("  1 . Ingresar un carro al parqueadero")
+    print("  2 . Dar salida a un carro del parqueadero")
+    print("  3 . Informar los ingresos totales del parqueadero")
+    print("  4 . Consultar la cantidad de puestos disponibles")
+    print("  5 . Consultar el porcentaje de disponibilidad")
+    print("  6 . Avanzar el reloj del parqueadero")
+    print("  7 . Cambiar la tarifa del parqueadero")
+    print("  8 . Guardar estado del parqueadero")
+    print("  9 . Cargar estado del parqueadero")
+    print("  10. Imprimir estado del parqueadero")
+    print("  0 . Salir")
