@@ -13,7 +13,18 @@ class Puesto:
         self.carro = None
 
 class Parqueadero:
+    _instance = None  # Variable de clase para almacenar la única instancia
+    @staticmethod
+    def get_instance(capacidad=None, tarifa=None):
+        if Parqueadero._instance is None:
+            if capacidad is None or tarifa is None:
+                raise ValueError("Debe proporcionar capacidad y tarifa para crear la instancia por primera vez.")
+            Parqueadero._instance = Parqueadero(capacidad, tarifa)
+        return Parqueadero._instance
+
     def __init__(self, capacidad, tarifa):
+        if Parqueadero._instance is not None:
+            raise Exception("Esta clase es un Singleton. Use el método 'get_instance()' para obtener la instancia.")
         self.capacidad = capacidad
         self.tarifa = tarifa
         self.puestos = [Puesto(numero) for numero in range(1, capacidad + 1)]

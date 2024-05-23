@@ -4,7 +4,7 @@ import packages.Proyecto as Ps
 
 def main():
     nombre_archivo = "parqueadero.csv"
-    parqueadero = Ps.Parqueadero(capacidad=40, tarifa=10)
+    parqueadero = Ps.Parqueadero.get_instance(capacidad=40, tarifa=10)
     
     while True:
         Ps.limpiar_pantalla()
